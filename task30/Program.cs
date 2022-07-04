@@ -3,31 +3,36 @@
 // нулями и единицами в случайном порядке.
 // [1,0,1,1,0,1,0,0]
 
+Console.WriteLine("Введите N: ");
+int num = int.Parse(Console.ReadLine());
 
-
-
-int[] array = new int[8];
-void Array (int[] collection)
+int[] FillArray(int num)
 {
-    int i = 0;
-    while (i < collection.Length)
+    int[] array = new int[num];
+    int length = array.Length;
+    int index = 0;
+    while (index < length)
     {
-        collection[i] = new Random().Next(0, 2);
-        i++;
-}
+        array[index] = new Random().Next(0, 2);
+        index++;
+    }
+    return array;
 }
 
-void Print (int[] collection)
+void PrintArray(int[] col)
 {
-    int i = 0;
-Console.Write("[ ");
-    while (i < collection.Length)
+    Console.Write("[");
+    int count = col.Length;
+    int position = 0;
+    while (position < count)
     {
-        Console.Write($"{collection[i]} ");
-        i++;
-} 
-Console.Write("]");
+        Console.Write($"{col[position]} ");
+        position++;
+    }
+    Console.Write("]");
 }
-Array(array);
-Print(array);
+
+int[] arr = FillArray(num);
+PrintArray(arr);
+
 
